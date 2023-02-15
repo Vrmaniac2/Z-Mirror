@@ -78,15 +78,14 @@ def stats(update, context):
 
 def start(update, context):
     if config_dict['DM_MODE']:
-        start_string = 'Welcome | Z BOT is ready for you.\n' \
+        start_string = 'Welcome | Dr. Torrent X BOT is ready for you.\n' \
                        'Thanks for starting me in DM.\n' \
                        'Now I can send all of your files and links here.\n'
     else:
         start_string = 'Hey, Welcome dear. \n' \
                        'I can Mirror all your links To Google Drive! \n' \
                        'Unfortunately you are not authorized!\n' \
-                       'Please deploy your own BOT!' \
-                       'Created With Love by @Z_Mirror . \n' \
+                       'Created With Love by @SuperGodX . \n' \
                        'Thank You!'
     sendMessage(start_string, context.bot, update.message)
 
