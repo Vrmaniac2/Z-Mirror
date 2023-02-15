@@ -204,6 +204,7 @@ def get_readable_message():
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
             if config_dict['DM_MODE']:
                 msg += f"Hey <b><i>@{download.message.from_user.username}</i></b>, Please wait!\n<b>{download.status()}</b> Your Task [<a href='{download.message.link}'>{download.mode}</a>]"
+                msg += f"\n<b> Name: <b> <code>{escape(str(download.name()))}</code>"
             else:
                 msg += f'\n<b>{download.status()}:</b> <code>{escape(str(download.name()))}</code>'
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_CONVERTING]:
@@ -247,7 +248,7 @@ def get_readable_message():
                 except:
                     pass
             if download.status() != MirrorStatus.STATUS_CONVERTING:
-                msg += f"\n🛑 <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                msg += f"\n <b> To Cancel:<b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             msg += "\n\n"
             if STATUS_LIMIT and index == STATUS_LIMIT:
                 break
